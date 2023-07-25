@@ -1,0 +1,45 @@
+Sizing guidelines for #SAP IS-Healthcare:
+
+The following factors can influence performance and should be considered for hospitals:
+
+- Uses many and/or very complex service rules.
+- Outpatient department management, appointment search: use a large
+ number of routing objects and/or long planning horizons.
+- Stats that require a lot of time to run are often called online.
+- It uses the invoice accrual and, for this, it has a great.
+ number of services and a large number of open services (not billed definitively).
+ Cases (a case construction that does not correspond to the standard and
+ therefore, you never do a final billing on older cases).
+- Synchronous processing is used in communication.
+- It has an extremely complex calculation procedure (group conditions, formulas and others).
+
+Therefore, it is recommended the following heuristic approach:
+- For an average hospital (~700 beds) we estimate approx. 2-3 GB/year.
+- For a case (outpatient or hospitalized) approximately 150-250 KB is incurred.
+
+The size of a case depends on the following:
+- How many visits does an outpatient episode have?
+- Are outpatient episodes billed?
+- How many services are introduced on average for each episode?
+  With over 1000 services per case, the superior value of 250 KB can easily be exceeded.
+
+Disk space requirements:
+Factors that influence disk space requirements are:
+- The number and type of i.s.h.med modules used.
+- The number of clinical orders and services created.
+- the number of medication and nursing entities created and documented.
+- the number and complexity of the PMDs created, as well as additional settings such as creating Microsoft Word Container or Adobe PDF versions of documents stored on the file system or in the database.
+
+Therefore, it is recommended the following heuristic approach for a medium configuration (excluding all client-specific resource-intensive features):
+- Approx. 1 KB per clinical order position.
+- Approx. 2.5 KB per average PMD (parameterized medical document containing less than a dozen structured fields).
+- Approximately 500 KB per instance, including a reasonable number of entities under (1) and (2).
+- For an average hospital (~700 beds) are estimated approximately 10 GB/year. 
+
+General considerations:
+The following factors can influence performance and should be considered in large hospitals:
+- Use numerous and/or very complex clinical workflows.
+- External consultation management, citation search: numerous routing objects and/or long planning horizons are used.
+- i.s.h.med modules are widely used throughout the hospital (medication, nursing, etc.).
+- Use summaries and worklists that require a lot of execution time.
+- Create and use highly complex PMDs (parameterized medical documents) with numerous explanatory text fields and/or complex structures.
