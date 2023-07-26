@@ -1,4 +1,4 @@
-Sizing guidelines for #SAP IS-Healthcare:
+#Sizing guidelines for #SAP IS-Healthcare:
 
 The following factors can influence performance and should be considered for hospitals:
 
